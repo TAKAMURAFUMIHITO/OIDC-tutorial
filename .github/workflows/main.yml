@@ -13,7 +13,6 @@ jobs:
       - uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-region: 'us-east-1'
-          role-to-assume: 'arn:aws:iam::process.env.ACCOUNT_ID:role/process.env.takamura-no-oidc'
+          role-to-assume: ${{ secrets.AWS_IAM_ROLE_ARN }}
 
-      # プライベートな S3 バケットを読み取ってみる
       - run: aws s3 ls s3://oidc-example
