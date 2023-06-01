@@ -15,5 +15,4 @@ jobs:
           aws-region: 'us-east-1'
           role-to-assume: ${{ secrets.AWS_IAM_ROLE_ARN }}
 
-      # プライベートな S3 バケットを読み取ってみる
       - run: aws s3 ls s3://${{ secrets.S3_BUCKET_NAME }}
